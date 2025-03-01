@@ -1,3 +1,14 @@
+#==========================================================
+#                    CONFIGURATION
+
+# Use Latest Stable Release / Use Latest Snapshot
+UPDATE_TO_SNAPSHOT = True # True/False
+
+# Number of minutes in between each update check
+Check_Interval = 2 # int (min 2)
+
+#==========================================================
+
 try:
     import sys, os, time, shutil, psutil, hashlib, subprocess, requests, logging, signal
     from datetime import datetime
@@ -6,11 +17,6 @@ except:
     subprocess.call(sys.executable, '-m', 'pip', 'install', 'psutil')
     subprocess.call([sys.executable,sys.argv[0]])
     exit()
-
-# CONFIGURATION
-UPDATE_TO_SNAPSHOT = True
-BACKUP_DIR = 'world'
-Check_Interval = 2 # in Minutes, minimum of 2
 
 if not os.path.exists('Logs'):
     os.mkdir('Logs')
